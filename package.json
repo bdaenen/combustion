@@ -83,7 +83,9 @@
   },
   "scripts": {
     "start": "node scripts/start.js",
+    "prebuild": "rm -rf ./build && rm -f ./build.tar.gz",
     "build": "node scripts/build.js",
+    "postbuild": "tar -cvzf ./build.tar.gz ./build",
     "test": "node --harmony_proxies scripts/test.js --env=jsdom"
   },
   "homepage": ".",
