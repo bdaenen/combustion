@@ -2,10 +2,11 @@ import React from "react";
 import Input from "react-toolbox/lib/input";
 
 const predefinedFolders = {
-    "/downloads": '/',
-    "/downloads/Benno": '/Benno/',
-    "/downloads/Tatiana": '/Tatiana/',
-    "/downloads/transmission": '/Transmission/',
+    "/downloads": '/downloads',
+    "/downloads/benno": '/benno/',
+    "/downloads/benno/switch": '/benno/switch/',
+    "/downloads/tanya": '/tanya/',
+    "/downloads/tanya/audiobooks": '/tanya/audiobooks',
     "/downloads/plex/anime": '/plex/anime/',
     "/downloads/plex/movies": '/plex/movies/',
     "/downloads/plex/series": '/plex/series/',
@@ -41,6 +42,7 @@ export default function DownloadLocationSelect(props) {
                     </select>
                 </div>
                 <Input type='text' label="Subdirectory (optional)" id={"location-suffix-input"}
+                       icon="folder"
                        onChange={(newSuffix) => {
                            onChange(`${activePath}/${newSuffix.replace(/^\//, '').replace(/[^a-z0-9/\-]/gi, '_')}`)
                        }}
